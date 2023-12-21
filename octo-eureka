@@ -1,0 +1,14 @@
+                if x == items2.indices.last {
+                    self.passThroughPublisher2.send(completion: .finished)
+                }
+            }
+        }
+struct BoundsPreferenceKey: PreferenceKey {
+    typealias Value = Anchor<CGRect>?
+
+    static var defaultValue: Value?
+
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value = nextValue()
+    }
+}
